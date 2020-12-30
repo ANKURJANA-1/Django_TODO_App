@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p{
+            background-color: aqua;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Todo App</h1>
+
+    <form action="{% url 'submit' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="content" placeholder="Enter todo">
+        <input type="submit">
+    </form>
+    <hr>
+    
+    {% for data in data%}
+    <p><h4>>{{data.content}}</h4></p>
+    {% endfor %}
+  
+
+</body>
+</html>
